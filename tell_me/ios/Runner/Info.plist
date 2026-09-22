@@ -21,6 +21,11 @@
 		<string>Tell Me uses speech recognition to convert your voice into text commands.</string>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
+		<!-- App uses only standard HTTPS/TLS (Firebase, Cloud Functions),
+	     which is exempt. Declaring this here skips the manual export
+	     compliance question on every App Store Connect upload. -->
+		<key>ITSAppUsesNonExemptEncryption</key>
+		<false/>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>

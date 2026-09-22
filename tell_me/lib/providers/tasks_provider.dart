@@ -52,16 +52,15 @@ class TasksNotifier extends StateNotifier<List<Task>> {
     final local = StorageService.instance.getAllTasks();
 
     if (local.isEmpty && SettingsService.instance.isFirstLaunch) {
-      // On first launch, check cloud before seeding demo data so returning
-      // users on a new device get their real data immediately.
+      // On first launch, check the cloud so returning users on a new device
+      // get their real data immediately. A genuinely new user starts with an
+      // empty list and sees the empty state, not sample content.
       final cloud = await SyncService.instance.fetchTasks();
       if (cloud.isNotEmpty) {
         await StorageService.instance.replaceAllTasks(cloud);
         state = cloud;
-        await SettingsService.instance.markLaunched();
-      } else {
-        await _seedMockData();
       }
+      await SettingsService.instance.markLaunched();
     } else {
       state = local;
     }
@@ -98,32 +97,6 @@ class TasksNotifier extends StateNotifier<List<Task>> {
   void dispose() {
     _cloudSub?.cancel();
     super.dispose();
-  }
-
-  Future<void> _seedMockData() async {
-    final now = DateTime.now();
-    final tomorrow = now.add(const Duration(days: 1));
-    final inTwoDays = now.add(const Duration(days: 2));
-    final inThreeDays = now.add(const Duration(days: 3));
-    final inFourDays = now.add(const Duration(days: 4));
-
-    final tasks = [
-      Task(id: _uuid.v4(), title: 'Create wireframe', subtitle: 'Today', dueDate: now, status: TaskStatus.ongoing, isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Design home page', subtitle: 'Today', dueDate: now, status: TaskStatus.ongoing, isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Weekly Sync with Design Team', subtitle: 'Tomorrow · 10:00 AM', dueDate: tomorrow, dueTime: '10:00 AM', status: TaskStatus.upcoming, isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Finalize brand strategy doc', subtitle: 'Wed · High Priority', dueDate: inTwoDays, status: TaskStatus.upcoming, priority: TaskPriority.high, category: 'Work', isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Client presentation prep', subtitle: 'Thu · Work', dueDate: inThreeDays, status: TaskStatus.upcoming, category: 'Work', isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Buy fresh groceries', subtitle: 'Fri · Personal', dueDate: inFourDays, status: TaskStatus.upcoming, category: 'Personal', isDone: false, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Watering the plants', subtitle: 'Today', dueDate: now, status: TaskStatus.completed, isDone: true, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Morning meditation session', subtitle: 'Today · 07:30 AM', dueDate: now, dueTime: '07:30 AM', status: TaskStatus.completed, isDone: true, createdAt: now),
-      Task(id: _uuid.v4(), title: 'Gym — Cardio & Mobility', subtitle: 'Today · 06:00 AM', dueDate: now, dueTime: '06:00 AM', status: TaskStatus.completed, isDone: true, createdAt: now),
-    ];
-
-    for (final t in tasks) {
-      await StorageService.instance.saveTask(t);
-    }
-    state = tasks;
-    await SettingsService.instance.markLaunched();
   }
 
   Future<Task> addTask(String title,

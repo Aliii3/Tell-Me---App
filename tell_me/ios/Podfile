@@ -1,4 +1,5 @@
-# flutter_onnxruntime (Kokoro TTS) requires iOS 16.0 minimum.
+# Minimum supported iOS version. Must match IPHONEOS_DEPLOYMENT_TARGET in
+# Runner.xcodeproj and the pod override in post_install below.
 platform :ios, '16.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
@@ -43,6 +44,12 @@ post_install do |installer|
       config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
       config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
       config.build_settings['CODE_SIGN_IDENTITY'] = ''
+      # Several pods still declare deployment targets as low as iOS 9, which
+      # Xcode 26+ rejects outright ("supported range is 15.0 to ..."), failing
+      # the build. flutter_additional_ios_build_settings only raises them to
+      # Flutter's own minimum, which is still below that floor — so pin every
+      # pod to the app's minimum (matching `platform :ios` above).
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
     end
   end
 end

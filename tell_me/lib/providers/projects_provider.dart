@@ -1,12 +1,8 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uuid/uuid.dart';
 import '../models/project.dart';
 import '../services/storage_service.dart';
 import '../services/sync_service.dart';
-
-const _uuid = Uuid();
 
 class ProjectsNotifier extends StateNotifier<List<Project>> {
   ProjectsNotifier() : super([]) {
@@ -19,12 +15,12 @@ class ProjectsNotifier extends StateNotifier<List<Project>> {
     final local = StorageService.instance.getAllProjects();
 
     if (local.isEmpty) {
+      // Pull anything already in the cloud (returning user on a new device);
+      // a new user starts empty and sees the empty state.
       final cloud = await SyncService.instance.fetchProjects();
       if (cloud.isNotEmpty) {
         await StorageService.instance.replaceAllProjects(cloud);
         state = cloud;
-      } else {
-        await _seedMockData();
       }
     } else {
       state = local;
@@ -43,19 +39,6 @@ class ProjectsNotifier extends StateNotifier<List<Project>> {
   void dispose() {
     _cloudSub?.cancel();
     super.dispose();
-  }
-
-  Future<void> _seedMockData() async {
-    final now = DateTime.now();
-    final projects = [
-      Project(id: _uuid.v4(), title: 'Write a proposal for Inc.', emoji: '🏆', status: ProjectStatus.ongoing, createdBy: 'You', progress: 0.35, colorValue: Colors.white.toARGB32(), createdAt: now),
-      Project(id: _uuid.v4(), title: 'Ed-tech market analysis...', emoji: '📊', status: ProjectStatus.future, createdBy: 'You', progress: 0.20, colorValue: const Color(0xFF060A16).toARGB32(), createdAt: now),
-      Project(id: _uuid.v4(), title: 'E-commerce landing page.', emoji: '🛍️', status: ProjectStatus.ongoing, createdBy: 'You', progress: 0.55, colorValue: Colors.white.toARGB32(), createdAt: now),
-    ];
-    for (final p in projects) {
-      await StorageService.instance.saveProject(p);
-    }
-    state = projects;
   }
 
   Future<void> addProject(Project project) async {
