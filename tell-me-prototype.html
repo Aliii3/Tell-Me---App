@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tell Me — AI Productivity Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="light">
+
+<div class="phone" id="phone">
+
+  <!-- ══════════════════════════════════════
+       LOGIN / ONBOARDING
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-login">
+    <div class="lm-onboard">
+      <div class="lm-ob-top">
+        <div class="lm-status"><span>9:41</span><span>●●●</span></div>
+        <span class="lm-badge">✦ Smart Learning</span>
+        <h1 class="lm-ob-title">Tell Me —<br><em>AI Powered<br>Smart Assistant!</em></h1>
+      </div>
+      <div class="lm-hex-grid">
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg></div>
+          <span class="lm-hex-label">Learning</span>
+        </div>
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></div>
+          <span class="lm-hex-label">Chat</span>
+        </div>
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg></div>
+          <span class="lm-hex-label">AI</span>
+        </div>
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg></div>
+          <span class="lm-hex-label">Education</span>
+        </div>
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <span class="lm-hex-label">Planning</span>
+        </div>
+        <div class="lm-hex-item">
+          <div class="lm-hex-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#555" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
+          <span class="lm-hex-label">Wellness</span>
+        </div>
+      </div>
+      <div class="lm-ob-footer">
+        <button class="lm-btn-primary" onclick="goTo('splash')">Get Started →</button>
+        <button class="lm-btn-outline" onclick="goTo('home')">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SPLASH SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen active" id="s-splash">
+    <div class="sp-screen">
+      <div class="sp-lines-zone">
+        <div class="sp-status"><span>9:41</span><span>●●●</span></div>
+        <div class="sp-line sp-l1"></div>
+        <div class="sp-line sp-l2"></div>
+        <div class="sp-line sp-l3"></div>
+        <div class="sp-line sp-l4"></div>
+        <div class="sp-line sp-l5"></div>
+        <div class="sp-line sp-l6"></div>
+        <div class="sp-line sp-l7"></div>
+      </div>
+      <div class="sp-content">
+        <div class="sp-heading">Manage<br>your</div>
+        <div class="sp-tasks-word">tasks</div>
+        <div class="sp-footer-row">
+          <span class="sp-get-lbl">Get started</span>
+          <button class="sp-go-btn" onclick="goTo('home')">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HOME SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-home">
+    <div class="lm-status"><span>9:41</span><span>●●●</span></div>
+    <div class="lm-topbar">
+      <div class="lm-av">A</div>
+      <div class="lm-topbar-right">
+        <div class="lm-icon-btn lm-has-notif">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <div class="lm-notif-dot"></div>
+        </div>
+        <div class="lm-icon-btn">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="lm-scroll">
+      <div class="lm-greeting-section">
+        <div class="lm-greeting">Hello, <strong>Alex!</strong></div>
+        <div class="lm-sub">Look at your projects.</div>
+      </div>
+
+      <!-- Today's Progress Card -->
+      <div class="gm-prog-card">
+        <div class="gm-prog-date">24 April, Mon</div>
+        <div class="gm-prog-lbl">Today's progress</div>
+        <div class="gm-prog-pct">83%</div>
+        <div class="gm-prog-tasks">10/12 Tasks</div>
+        <div class="gm-prog-bar">
+          <div class="gm-prog-bar-fill" style="width:83%"></div>
+        </div>
+      </div>
+
+      <div class="lm-chips-row">
+        <div class="lm-chip">Ongoing &amp; Future <span class="lm-chip-count">6</span></div>
+        <div class="lm-chip">High priority <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3" style="vertical-align:middle;display:inline;"><path d="M5 15l7-7 7 7"/></svg></div>
+        <div class="lm-chip lm-chip-people">Created by: <strong>Alex, Sam</strong><div class="lm-pav" style="background:#444">A</div><div class="lm-pav" style="background:#888">S</div></div>
+      </div>
+
+      <div class="lm-action-bar">
+        <button class="lm-new-btn" onclick="goTo('tasks')">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/></svg>
+          New project
+        </button>
+        <button class="lm-filter-circle">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>
+        </button>
+      </div>
+
+      <div class="lm-proj-list">
+
+        <div class="lm-fw lm-fw-light">
+          <div class="lm-proj-card lm-card-light" onclick="goTo('tasks')">
+            <div class="lm-card-meta">
+              <div class="lm-status-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2v6l4 4-4 4v6h12v-6l-4-4 4-4V2H6z"/></svg> Ongoing</div>
+              <div class="lm-card-icon" style="background:#222"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <span class="lm-card-by">Created by <b>Jess</b></span>
+              <div class="lm-card-av" style="background:linear-gradient(135deg,#c4956a,#a0714f)">J</div>
+              <span class="lm-card-av-plus">+</span>
+            </div>
+            <div class="lm-more-row"><button class="lm-card-more">···</button></div>
+            <div class="lm-card-body">
+              <div class="lm-card-thumb" style="background:linear-gradient(135deg,#f5e090,#e8a820);font-size:26px">🏆</div>
+              <div class="lm-card-title">Write a proposal for Inc.</div>
+            </div>
+            <div class="lm-prog"><div class="lm-prog-fill" style="width:35%"></div></div>
+          </div>
+        </div>
+
+        <div class="lm-fw lm-fw-dark">
+          <div class="lm-proj-card lm-card-dark" onclick="goTo('chat')">
+            <div class="lm-card-meta">
+              <div class="lm-status-pill lm-status-dark"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2v6l4 4-4 4v6h12v-6l-4-4 4-4V2H6z"/></svg> Future</div>
+              <div class="lm-card-icon" style="background:rgba(255,255,255,0.16)"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <span class="lm-card-by lm-by-dark">Created by <b class="lm-by-dark-b">Max</b></span>
+              <div class="lm-card-av lm-av-dark" style="background:linear-gradient(135deg,#5a6e80,#3d5060)">M</div>
+              <span class="lm-card-av-plus lm-plus-dark">+</span>
+            </div>
+            <div class="lm-more-row"><button class="lm-card-more lm-more-dark">···</button></div>
+            <div class="lm-card-body">
+              <div class="lm-card-thumb lm-thumb-dark">E</div>
+              <div class="lm-card-title lm-title-dark">Ed-tech market analysis...</div>
+            </div>
+            <div class="lm-prog lm-prog-on-dark"><div class="lm-prog-fill lm-prog-fill-light" style="width:20%"></div></div>
+          </div>
+        </div>
+
+        <div class="lm-fw lm-fw-light">
+          <div class="lm-proj-card lm-card-light" onclick="goTo('chat')">
+            <div class="lm-card-meta">
+              <div class="lm-status-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 2v6l4 4-4 4v6h12v-6l-4-4 4-4V2H6z"/></svg> Ongoing</div>
+              <div class="lm-card-icon" style="background:#222"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <span class="lm-card-by">Created by <b>Alex</b></span>
+              <div class="lm-card-av" style="background:linear-gradient(135deg,#6a9e7a,#4a7e5a);color:#fff">A</div>
+              <span class="lm-card-av-plus">+</span>
+            </div>
+            <div class="lm-more-row"><button class="lm-card-more">···</button></div>
+            <div class="lm-card-body">
+              <div class="lm-card-thumb" style="background:linear-gradient(135deg,#e0e0e0,#f5f5f5);font-size:26px">🛍️</div>
+              <div class="lm-card-title">E-commerce landing page.</div>
+            </div>
+            <div class="lm-prog"><div class="lm-prog-fill" style="width:55%"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="lm-bnav">
+      <div class="lm-ni lm-ni-active" onclick="goTo('home')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('tasks')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12h14V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div></div>
+      <div class="lm-ni lm-ni-center" onclick="goTo('chat')"><div class="lm-ni-center-wrap"><svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('calendar')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('settings')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TASKS SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-tasks">
+    <div class="lm-status"><span>9:41</span><span>●●●</span></div>
+
+    <!-- Good Morning Header -->
+    <div class="gm-topbar">
+      <div class="gm-greeting-wrap">
+        <div class="gm-good">Good</div>
+        <div class="gm-morning">morning</div>
+      </div>
+      <div class="gm-icons">
+        <div class="lm-icon-btn">
+          <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <div class="lm-icon-btn lm-has-notif">
+          <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <div class="lm-notif-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lm-scroll">
+      <!-- Folder: Ongoing -->
+      <div class="lm-folder">
+        <div class="lm-folder-hdr" onclick="toggleFolder(this)">
+          <span class="lm-folder-nm">Ongoing</span>
+          <span class="lm-folder-cnt">2</span>
+          <svg class="lm-folder-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="lm-folder-body">
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Create wireframe</div>
+              <div class="lm-task-sub">Today</div>
+            </div>
+          </div>
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Design home page</div>
+              <div class="lm-task-sub">Today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Folder: Upcoming -->
+      <div class="lm-folder">
+        <div class="lm-folder-hdr" onclick="toggleFolder(this)">
+          <span class="lm-folder-nm">Upcoming</span>
+          <span class="lm-folder-cnt">4</span>
+          <svg class="lm-folder-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="lm-folder-body">
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Weekly Sync with Design Team</div>
+              <div class="lm-task-sub">Tomorrow · 10:00 AM</div>
+            </div>
+          </div>
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Finalize brand strategy doc</div>
+              <div class="lm-task-sub">Wed · High Priority</div>
+            </div>
+          </div>
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Client presentation prep</div>
+              <div class="lm-task-sub">Thu · Work</div>
+            </div>
+          </div>
+          <div class="lm-ftask" onclick="toggleTask(this)">
+            <div class="task-cb task-sq"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm">Buy fresh groceries</div>
+              <div class="lm-task-sub">Fri · Personal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Folder: Completed -->
+      <div class="lm-folder">
+        <div class="lm-folder-hdr" onclick="toggleFolder(this)">
+          <span class="lm-folder-nm">Completed</span>
+          <span class="lm-folder-cnt">10</span>
+          <svg class="lm-folder-arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="lm-folder-body">
+          <div class="lm-ftask">
+            <div class="task-cb task-sq done"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm done">Watering the plants</div>
+              <div class="lm-task-sub">Today</div>
+            </div>
+          </div>
+          <div class="lm-ftask">
+            <div class="task-cb task-sq done"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm done">Morning meditation session</div>
+              <div class="lm-task-sub">Today · 07:30 AM</div>
+            </div>
+          </div>
+          <div class="lm-ftask">
+            <div class="task-cb task-sq done"><svg width="11" height="11" fill="none" viewBox="0 0 12 12" stroke="white" stroke-width="2.5"><polyline points="1.5 6 4.5 9 10.5 3"/></svg></div>
+            <div class="lm-ftask-info">
+              <div class="task-nm lm-task-nm done">Gym — Cardio &amp; Mobility</div>
+              <div class="lm-task-sub">Today · 06:00 AM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAB -->
+    <button class="lm-fab">+</button>
+
+    <div class="lm-bnav">
+      <div class="lm-ni" onclick="goTo('home')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div></div>
+      <div class="lm-ni lm-ni-active" onclick="goTo('tasks')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12h14V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div></div>
+      <div class="lm-ni lm-ni-center" onclick="goTo('chat')"><div class="lm-ni-center-wrap"><svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('calendar')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('settings')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CALENDAR SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-calendar">
+    <!-- Dark Header -->
+    <div class="cal-dark-top">
+      <div class="lm-status" style="color:rgba(255,255,255,.7);padding-top:0;margin-bottom:6px"><span>9:41</span><span>●●●</span></div>
+      <div class="cal-nav-row">
+        <button class="cal-back" onclick="goTo('home')">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+        </button>
+        <span class="cal-month-title">April 2023
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </span>
+      </div>
+      <div class="cal-days-strip">
+        <div class="cal-day-col" onclick="this.closest('.cal-days-strip').querySelectorAll('.cal-day-col').forEach(d=>d.classList.remove('sel'));this.classList.add('sel')">
+          <span class="cal-dn">mon</span><span class="cal-dd">24</span>
+        </div>
+        <div class="cal-day-col sel" onclick="this.closest('.cal-days-strip').querySelectorAll('.cal-day-col').forEach(d=>d.classList.remove('sel'));this.classList.add('sel')">
+          <span class="cal-dn">tue</span><span class="cal-dd">25</span>
+        </div>
+        <div class="cal-day-col" onclick="this.closest('.cal-days-strip').querySelectorAll('.cal-day-col').forEach(d=>d.classList.remove('sel'));this.classList.add('sel')">
+          <span class="cal-dn">wed</span><span class="cal-dd">26</span>
+        </div>
+        <div class="cal-day-col" onclick="this.closest('.cal-days-strip').querySelectorAll('.cal-day-col').forEach(d=>d.classList.remove('sel'));this.classList.add('sel')">
+          <span class="cal-dn">thu</span><span class="cal-dd">27</span>
+        </div>
+        <div class="cal-day-col" onclick="this.closest('.cal-days-strip').querySelectorAll('.cal-day-col').forEach(d=>d.classList.remove('sel'));this.classList.add('sel')">
+          <span class="cal-dn">fri</span><span class="cal-dd">28</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light Content Area -->
+    <div class="cal-light-area">
+      <div class="cal-info-row">
+        <span class="cal-meeting-badge">3 Meeting</span>
+      </div>
+      <div class="cal-day-heading">Monday</div>
+
+      <div class="cal-timeline">
+        <!-- 10:00 Daily Stand up -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">10:00</span>
+          <div class="cal-slot">
+            <div class="cal-ev cal-ev-gray">
+              <div class="cal-ev-row">
+                <span class="cal-ev-title">Daily Stand up</span>
+                <button class="cal-ev-dots">···</button>
+              </div>
+              <div class="cal-ev-sub">30 min · Team</div>
+            </div>
+          </div>
+        </div>
+        <!-- 11:00 empty -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">11:00</span>
+          <div class="cal-slot"></div>
+        </div>
+        <!-- 12:00 Design Meeting (tall) -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">12:00</span>
+          <div class="cal-slot">
+            <div class="cal-ev cal-ev-purple">
+              <div class="cal-ev-row">
+                <span class="cal-ev-title">Design Meeting</span>
+                <button class="cal-ev-dots" style="color:rgba(0,0,0,.3)">···</button>
+              </div>
+              <div class="cal-ev-sub" style="color:rgba(79,93,82,.7)">2 hrs · Product</div>
+              <div class="cal-ev-bottom-row">
+                <div class="cal-ev-avs">
+                  <div class="cal-ev-av" style="background:#667A68;border-color:#dde5de">J</div>
+                  <div class="cal-ev-av" style="background:#4F5D52;border-color:#dde5de">M</div>
+                </div>
+                <div class="cal-ev-vid">
+                  <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72v12.44l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0013.5 5.25h-9A2.25 2.25 0 002.25 9.75v9A2.25 2.25 0 004.5 18.75z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 13:00 continuation -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">13:00</span>
+          <div class="cal-slot cal-slot-cont"></div>
+        </div>
+        <!-- 14:00 empty -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">14:00</span>
+          <div class="cal-slot"></div>
+        </div>
+        <!-- 15:00 Lunch Time -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">15:00</span>
+          <div class="cal-slot">
+            <div class="cal-ev cal-ev-peach">
+              <div class="cal-ev-row">
+                <span class="cal-ev-title">Lunch Time</span>
+                <button class="cal-ev-dots" style="color:rgba(0,0,0,.3)">···</button>
+              </div>
+              <div class="cal-ev-sub" style="color:rgba(102,122,104,.6)">1 hr · Break</div>
+            </div>
+          </div>
+        </div>
+        <!-- 16:00 empty -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">16:00</span>
+          <div class="cal-slot"></div>
+        </div>
+        <!-- 17:00 empty -->
+        <div class="cal-tr">
+          <span class="cal-time-lbl">17:00</span>
+          <div class="cal-slot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAB -->
+    <button class="lm-fab">+</button>
+
+    <div class="lm-bnav">
+      <div class="lm-ni" onclick="goTo('home')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('tasks')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12h14V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div></div>
+      <div class="lm-ni lm-ni-center" onclick="goTo('chat')"><div class="lm-ni-center-wrap"><svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></div></div>
+      <div class="lm-ni lm-ni-active" onclick="goTo('calendar')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('settings')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CHAT / VOICE SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-chat">
+    <div class="lm-status"><span>9:41</span><span>●●●</span></div>
+    <div class="lm-chat-hdr">
+      <button class="lm-chat-nav-btn" onclick="goTo('home')"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg></button>
+      <span class="lm-chat-title">Tell Me</span>
+      <button class="lm-chat-nav-btn" onclick="goTo('home')"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <div class="lm-voice-section">
+      <div class="lm-orb-outer">
+        <div class="lm-orb-mid">
+          <button class="lm-orb-core" id="voiceBtn" type="button" onclick="toggleVoiceInput()" aria-pressed="false">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3zM19 10v2a7 7 0 01-14 0v-2M12 19v4"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="lm-voice-hint" id="voiceStatus">Tap to speak with Tell Me.</div>
+    </div>
+    <div class="chat-scroll" id="chat-scroll">
+      <div class="lm-msg-lbl">Assistant</div>
+      <div class="lm-bubble-ai">Good morning! I've analysed your schedule. You have <strong>3 focus tasks</strong> and a creative window around 2 PM. How would you like to start?</div>
+      <div class="lm-msg-lbl lm-msg-lbl-user">You</div>
+      <div class="lm-bubble-user">Can you help me outline the Luminous project? I want to focus on the aesthetic direction first.</div>
+      <div class="lm-msg-lbl">Assistant</div>
+      <div class="lm-bubble-ai">Absolutely! For the <strong>Luminous Initiative</strong>, here are the core pillars I'd suggest:</div>
+      <div class="lm-insight-row">
+        <div class="lm-ins-card"><div class="lm-ins-icon">✦</div><div class="lm-ins-title">Atmospheric Depth</div><div class="lm-ins-sub">Layered translucent glass surfaces</div></div>
+        <div class="lm-ins-card"><div class="lm-ins-icon">✏️</div><div class="lm-ins-title">Editorial Type</div><div class="lm-ins-sub">Tight serif headlines</div></div>
+      </div>
+      <div class="lm-achips">
+        <div class="lm-achip">Generate moodboard</div>
+        <div class="lm-achip">Outline tech specs</div>
+        <div class="lm-achip">Add to Calendar</div>
+      </div>
+    </div>
+    <div class="lm-chat-bar">
+      <div class="lm-chat-inner">
+        <input class="lm-chat-field" id="chatIn" placeholder="Ask Tell Me anything…">
+        <button class="lm-send-btn" onclick="sendMsg()"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="lm-bnav">
+      <div class="lm-ni" onclick="goTo('home')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('tasks')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12h14V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div></div>
+      <div class="lm-ni lm-ni-center lm-ni-active" onclick="goTo('chat')"><div class="lm-ni-center-wrap"><svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('calendar')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('settings')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SETTINGS SCREEN
+  ══════════════════════════════════════ -->
+  <div class="screen" id="s-settings">
+    <div class="lm-status"><span>9:41</span><span>●●●</span></div>
+    <div class="lm-topbar">
+      <div class="lm-av">A</div>
+      <div class="lm-topbar-right">
+        <div class="lm-icon-btn lm-has-notif"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg><div class="lm-notif-dot"></div></div>
+        <div class="lm-icon-btn"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      </div>
+    </div>
+    <div class="lm-scroll">
+      <div class="lm-greeting-section">
+        <div class="lm-greeting"><strong>Settings</strong></div>
+        <div class="lm-sub">Alex Sterling</div>
+      </div>
+      <div style="padding:0 20px 16px">
+        <div class="lm-sec-title">Intelligence</div>
+        <div class="lm-srow">
+          <div class="lm-srow-icon">🧠</div>
+          <div class="lm-srow-info"><div class="lm-srow-name">Cognitive Memory</div><div class="lm-srow-val">AI remembers previous contexts</div></div>
+          <div class="lm-toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="lm-intel-grid">
+          <div class="lm-intel-card"><div style="font-size:18px;margin-bottom:5px">✨</div><div style="font-size:12px;font-weight:700;color:#111">Response Clarity</div><div style="font-size:11px;color:#888;margin-top:2px;line-height:1.4">Concise answers</div></div>
+          <div class="lm-intel-card"><div style="font-size:18px;margin-bottom:5px">🔍</div><div style="font-size:12px;font-weight:700;color:#111">Web Retrieval</div><div style="font-size:11px;color:#888;margin-top:2px;line-height:1.4">Real-time search</div></div>
+        </div>
+        <div class="lm-sec-title" style="margin-top:20px">Experience</div>
+        <div class="lm-srow" onclick="toggleMode()"><div class="lm-srow-icon">🌙</div><div class="lm-srow-info"><div class="lm-srow-name">Appearance</div><div class="lm-srow-val" id="mode-lbl">Light Mode</div></div><span style="color:#bbb;font-size:18px">›</span></div>
+        <div class="lm-srow"><div class="lm-srow-icon">🔊</div><div class="lm-srow-info"><div class="lm-srow-name">Voice Feedback</div><div class="lm-srow-val">Hands-free responses</div></div><div class="lm-toggle" onclick="this.classList.toggle('on')"></div></div>
+        <div class="lm-srow"><div class="lm-srow-icon">🌐</div><div class="lm-srow-info"><div class="lm-srow-name">Language</div><div class="lm-srow-val">English (US)</div></div><span style="color:#bbb;font-size:18px">›</span></div>
+        <div class="lm-srow"><div class="lm-srow-icon">🔒</div><div class="lm-srow-info"><div class="lm-srow-name">Privacy &amp; Data</div><div class="lm-srow-val">Zero-retention off</div></div><span style="color:#bbb;font-size:18px">›</span></div>
+        <button class="lm-signout" onclick="goTo('login')">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+          Sign Out
+        </button>
+      </div>
+    </div>
+    <div class="lm-bnav">
+      <div class="lm-ni" onclick="goTo('home')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('tasks')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12h14V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div></div>
+      <div class="lm-ni lm-ni-center" onclick="goTo('chat')"><div class="lm-ni-center-wrap"><svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></div></div>
+      <div class="lm-ni" onclick="goTo('calendar')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div></div>
+      <div class="lm-ni lm-ni-active" onclick="goTo('settings')"><div class="lm-ni-wrap"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div></div>
+    </div>
+  </div>
+
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

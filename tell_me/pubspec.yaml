@@ -1,0 +1,92 @@
+name: tell_me
+description: Tell Me — AI Productivity Assistant
+publish_to: 'none'
+version: 1.0.8+16
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # Local storage
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Animations
+  flutter_animate: ^4.5.0
+
+  # Voice input / output
+  # Pinned to 7.2.0: 7.3.0 moved iOS stop/listen onto detached background
+  # Tasks, which races the recognizer's own teardown (AVAudioEngine is not
+  # thread-safe) and crashes the app when the user taps the mic to stop.
+  # 6.6.2 avoided that too, but its Android code uses the removed v1
+  # embedding (Registrar) and no longer compiles. 7.2.0 has neither problem.
+  speech_to_text: 7.2.0
+  # System speech synthesizer — replaces the experimental on-device Kokoro
+  # model (~100MB download + native ONNX init) that crashed release builds.
+  flutter_tts: ^4.0.2
+
+  # Backend
+  cloud_functions: ^5.1.3
+
+  # Firebase / Auth
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  firebase_messaging: ^15.2.0
+  cloud_firestore: ^5.5.0
+  google_sign_in: ^6.2.1
+  sign_in_with_apple: ^6.1.3
+  crypto: ^3.0.3
+
+  # Notifications
+  flutter_local_notifications: ^18.0.0
+  timezone: ^0.10.0
+  flutter_timezone: ^3.0.1
+
+  # Utilities
+  uuid: ^4.4.0
+  intl: ^0.19.0
+  package_info_plus: ^8.0.2
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.9
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.1
+
+flutter:
+  uses-material-design: true
+
+# App icon — assets/icon/icon.png is a generated placeholder in the aurora
+# style; swap the PNG and re-run `dart run flutter_launcher_icons` for a
+# designed one.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/icon.png
+  remove_alpha_ios: true
+
+# Native splash — aurora ivory background with the star-burst mark, so the
+# launch frame blends into the in-app background (no white flash).
+flutter_native_splash:
+  color: "#F2EEE4"
+  image: assets/icon/splash_logo.png
+  android_12:
+    color: "#F2EEE4"
+    image: assets/icon/splash_logo.png

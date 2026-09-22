@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Editor
+.idea/
+*.iml
+
+# Flutter test artifacts
+tell_me/test/goldens/failures/
+
+# Duplicated generated file (Finder copy)
+tell_me/.flutter-plugins-dependencies 2
