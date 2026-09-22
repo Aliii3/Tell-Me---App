@@ -1,87 +1,110 @@
 # Tell Me — What's Left
 
-> Updated: 2026-07-11 (evening) · App version `1.0.8+15` (source now ahead of the
-> uploaded IPA — see note in §1) · 38/38 tests passing, analyzer clean.
+> Updated: 2026-09-23 · App version `1.0.8+16` · 38/38 tests passing, analyzer
+> clean, **`flutter build ios --release` verified working** (Runner.app, 43.6MB).
 >
-> The July 11 execution pass completed everything the code side could do:
-> aurora redesign visually QA'd on all 9 screens (contact sheet:
-> `screenshots_all_screens.png`), app icon + native splash generated and wired,
-> Firestore rules wired into `firebase.json`, Cloud Function `tsc`-clean,
-> Android debug APK building, `speech_to_text` re-pinned to 7.2.0 (fixes the
-> Android build AND keeps the iOS tap-to-stop crash fix), design-system golden
-> tests added (`test/goldens/`).
-
-Everything remaining is **manual/ops work only you can do** (accounts,
-consoles, physical devices), in priority order.
+> The September 23 pass fixed a completely broken release build. Before it,
+> no device build could be produced at all — see §0. Everything remaining is
+> manual/ops work only you can do (accounts, consoles, physical devices).
 
 ---
 
-## 1. Build & upload a new IPA (source has moved past build 15)
+## 0. What changed on 2026-09-23 (context for the items below)
 
-The pubspec now pins `speech_to_text: 7.2.0` (was 6.6.2 in the uploaded build
-15) plus the new icon/splash. Device testing must use a build cut from current
-source:
+**The project moved to `~/Developer/Tell Me - App`.** It previously sat on the
+iCloud-synced Desktop. iCloud stamps `com.apple.FinderInfo` and File Provider
+attributes onto build output, and `codesign` refuses to sign anything carrying
+them:
 
-1. Bump `version:` in `pubspec.yaml` to `1.0.8+16`.
-2. `flutter build ipa` (or Xcode → Product → Archive).
-3. Upload via Transporter / Xcode Organizer to TestFlight.
+```
+Failed to code sign binary: .../objective_c.framework:
+resource fork, Finder information, or similar detritus not allowed
+```
+
+Clearing the attributes did not stick — iCloud re-added them within seconds.
+`brctl` was also syncing `.git`. **Do not move this project back into
+Desktop/Documents**, or device builds will break again.
+
+Also fixed (see commit `d0153f7`):
+
+- Xcode 27 rejects any target below iOS 15.0, and several pods still declare
+  iOS 9–13. `post_install` now pins every pod to the app minimum (16.0).
+- The Runner target was on iOS 13.0 while the Podfile declared 16.0. Both are
+  now 16.0, so App Store Connect advertises the correct minimum.
+- `ITSAppUsesNonExemptEncryption=false` added — no more manual export
+  compliance answer on every upload.
+- First-launch demo seeding removed from `tasks_provider` / `projects_provider`.
+  New users now land on the real empty states instead of nine fake tasks.
+
+## 1. Build & upload the IPA
+
+`version:` is already at `1.0.8+16` (build 15 is what TestFlight has).
+
+1. `flutter build ipa` (or Xcode → Product → Archive).
+2. Upload via Transporter / Xcode Organizer to TestFlight.
+
+Signing is already configured: bundle `com.aliyasser.tellme`, team `R2TFFU729Z`,
+automatic signing, shared `Runner` scheme with a Release archive action.
 
 ## 2. Deploy the Cloud Function (fixes "AI chat always fails") **[blocker]**
 
-1. Firebase Console → upgrade project to **Blaze** plan.
-2. `firebase functions:secrets:set ANTHROPIC_API_KEY` (paste your Anthropic key).
-3. `firebase deploy --only functions` — the TypeScript already compiles clean.
-4. Smoke-test in the app: say "add a task to buy milk tomorrow at 9am" →
-   task appears in the Tasks screen with a due date.
+The Firebase CLI is not installed on this machine — use `npx firebase-tools`
+or `npm i -g firebase-tools` first.
+
+1. Firebase Console → upgrade project `tellme-app-ffbc1` to **Blaze**.
+2. `npx firebase-tools functions:secrets:set ANTHROPIC_API_KEY`
+3. `npx firebase-tools deploy --only functions` — TypeScript compiles clean
+   (`tsc --noEmit` passes).
+4. Smoke-test: say "add a task to buy milk tomorrow at 9am" → task appears
+   with a due date.
 
 ## 3. APNs key (fixes push notifications) **[blocker]**
 
-1. developer.apple.com → Keys → create an **APNs Auth Key** (.p8);
-   note the Key ID and Team ID.
-2. Firebase Console → Project Settings → Cloud Messaging → Apple app config →
-   upload the .p8 with Key ID + Team ID.
-3. Xcode → Runner → Signing & Capabilities: confirm the Push Notifications
-   capability is present.
-4. Test on a physical device: schedule a task a few minutes out → local
-   reminder fires; then send a test push from Firebase Console.
+1. developer.apple.com → Keys → create an **APNs Auth Key** (.p8); note the
+   Key ID and Team ID.
+2. Firebase Console → Project Settings → Cloud Messaging → upload the .p8.
+3. Xcode → Runner → Signing & Capabilities: confirm Push Notifications is
+   present (`aps-environment: production` is already in the entitlements).
+4. Test on a physical device.
 
 ## 4. Publish Firestore rules **[blocker]**
 
-`firestore.rules` (owner-scoped, anonymous blocked) is already wired into
+`firestore.rules` (owner-scoped, anonymous blocked) is wired into
 `firebase.json`:
 
-1. `firebase deploy --only firestore:rules`
-   (or paste the file into Firebase Console → Firestore → Rules → Publish).
+1. `npx firebase-tools deploy --only firestore:rules`
 2. Verify: sync works signed-in; reads fail signed-out.
 
 ## 5. Physical-device verification of the mic-stop fix
 
-The tap-to-stop crash fix is now `speech_to_text 7.2.0` (verified: its iOS
-code has none of the 7.3.0 detached-Task threading; simulator launch is
-clean). Confirm on hardware with the build from §1:
+Still outstanding — `speech_to_text` is pinned to 7.2.0 for this reason.
 
 1. Install build 16 on a real iPhone.
 2. Mic → speak → tap mic to stop. Repeat ~10 times.
 3. If it crashes: grab the crash log (Settings → Privacy → Analytics →
-   `Runner-*.ips`) and bring it back — no code changes without it.
+   `Runner-*.ips`) — no code changes without it.
 
-## 6. Store accounts & signing
+## 6. App Store Connect
 
-- **Android**: create a release keystore, fill `android/key.properties`
-  (keep the keystore out of any VCS). Add SHA-1/SHA-256 to Firebase for
-  Google sign-in.
-- **App Store Connect**: description, keywords, support + privacy-policy URLs;
-  privacy labels (mic usage, chat text sent to AI provider via Cloud
-  Functions, FCM token, Firestore user data); review notes explaining the mic
-  flow; screenshots — fresh aurora ones are in `screenshots_all_screens.png`
-  (individual PNGs can be re-shot on demand).
-- **Optional**: replace the generated placeholder icon
-  (`assets/icon/icon.png`) with a designed one, then re-run
-  `dart run flutter_launcher_icons` and `dart run flutter_native_splash:create`.
+- Description, keywords, support + privacy-policy URLs (the in-app privacy
+  screen exists, but Apple also needs a **hosted** URL).
+- Privacy labels: mic usage, chat text sent to an AI provider via Cloud
+  Functions, FCM token, Firestore user data.
+- Review notes explaining the mic flow.
+- **Screenshots must be captured manually** — see §7.
 
----
+Already satisfied: Sign in with Apple is implemented (required because Google
+sign-in is offered), and in-app account deletion exists (Guideline 5.1.1(v)).
 
-## Post-launch backlog (v1.1+, code work — ask Claude)
+## 7. Known environment issues (not code defects)
+
+| Issue | Detail |
+|---|---|
+| `Simulator.app` missing | `/Applications/Xcode.app/Contents/Developer/Applications/` is empty. Runtimes (iOS 26.4/26.5) and `simctl` work, but there is no GUI simulator. Reinstall Xcode to restore it. Until then, capture App Store screenshots on a physical iPhone 17 Pro Max (6.9", 1320×2868). |
+| Simulator debug build fails | `debug_unpack_ios` reports `Flutter.framework does not contain architectures "arm64 x86_64"` while listing exactly those architectures — an ordering/stale-artifact bug. Run `flutter clean` before a simulator build. Does not affect device or release builds. |
+| Android unbuildable | `android/app/google-services.json` is gitignored and absent. Re-run `flutterfire configure` before any Play Store work. |
+
+## Post-launch backlog (v1.1+, code work)
 
 - **Calendar ↔ tasks**: dated tasks on the calendar; `create_event` tool in
   the Cloud Function.
@@ -90,10 +113,11 @@ clean). Confirm on hardware with the build from §1:
 - **Monetization**: RevenueCat paywall, entitlement-gate AI chat,
   restore-purchases in Settings.
 - **Arabic/RTL localization**: strings already centralized in `AppStrings`.
+- **App privacy manifest**: no app-level `PrivacyInfo.xcprivacy` in the Runner
+  target (pods ship their own). Apple currently warns rather than rejects, but
+  adding one avoids ITMS-91053 mail.
 - **Deeper tests**: widget tests for main screens; integration test for
-  voice → task with a mocked function. (Design-system goldens now exist in
-  `test/goldens/` — `flutter test test/goldens --update-goldens` after any
-  intentional palette change.)
+  voice → task with a mocked function.
 - **Sync robustness**: retry queue, conflict resolution, offline indicator.
 
 ## Technical debt (unchanged)
